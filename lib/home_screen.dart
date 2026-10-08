@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
+import 'controllers/home_controller.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final controller = HomeController(context);
+
     return Scaffold(
       backgroundColor: Colors.grey[50],
       appBar: AppBar(
@@ -131,7 +134,7 @@ class HomeScreen extends StatelessWidget {
                     SizedBox(
                       width: double.infinity,
                       child: ElevatedButton(
-                        onPressed: () {},
+                        onPressed: controller.handleGoToOrder,
                         style: ElevatedButton.styleFrom(
                           backgroundColor: Colors.blue[700],
                           foregroundColor: Colors.white,

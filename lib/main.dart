@@ -1,8 +1,5 @@
-import 'package:flutter/material.dart';
-
-import 'login_screen.dart';
-import 'home_screen.dart';
-import 'order_screen.dart';
+﻿import 'package:flutter/material.dart';
+import 'navigation/app_routes.dart';
 
 void main() {
   runApp(const AguaExpressApp());
@@ -27,11 +24,8 @@ class AguaExpressApp extends StatelessWidget {
         useMaterial3: true,
         fontFamily: 'Roboto',
       ),
-      // Puedes cambiar la pantalla inicial
-      // LoginScreen(), HomeScreen(), o OrderScreen()
-      // home: const LoginScreen(),
-      // home: const HomeScreen(),
-      home: const OrderScreen(),
+      initialRoute: AppRoutes.login,
+      routes: AppRoutes.getRoutes(),
     );
   }
 }

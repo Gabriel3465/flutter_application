@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
+import 'controllers/order_controller.dart';
 
 class OrderScreen extends StatelessWidget {
   const OrderScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final controller = OrderController(context);
+
     return Scaffold(
       backgroundColor: Colors.grey[50],
       appBar: AppBar(
@@ -12,7 +15,7 @@ class OrderScreen extends StatelessWidget {
         elevation: 0,
         leading: IconButton(
           icon: const Icon(Icons.arrow_back, color: Colors.black87),
-          onPressed: () {},
+          onPressed: controller.handleGoBack,
         ),
         title: Text(
           'Mi pedido',
@@ -317,7 +320,7 @@ class OrderScreen extends StatelessWidget {
         child: Padding(
           padding: const EdgeInsets.all(16.0),
           child: ElevatedButton(
-            onPressed: () {},
+            onPressed: controller.handleConfirmOrder,
             style: ElevatedButton.styleFrom(
               backgroundColor: Colors.blue[700],
               foregroundColor: Colors.white,

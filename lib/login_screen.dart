@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
+import 'controllers/login_controller.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final controller = LoginController(context);
+
     return Scaffold(
       backgroundColor: Colors.white,
       body: SafeArea(
@@ -73,7 +76,7 @@ class LoginScreen extends StatelessWidget {
                 ),
                 const SizedBox(height: 24),
                 ElevatedButton(
-                  onPressed: () {},
+                  onPressed: controller.handleLogin,
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.blue[700],
                     foregroundColor: Colors.white,
